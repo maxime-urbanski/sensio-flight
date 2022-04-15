@@ -2,21 +2,11 @@ import styled from 'styled-components';
 
 export const NavBarContainer = styled.div`
   // width: 100vw;
-  padding: 20px 15px;
-  background-color: #066163;
+  padding: 50px 15px;
+  background-color: ${({theme}) => theme.white};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  > a {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    transition: color .3s ease-in-out;
-
-    &:hover {
-      color: #CDBE78;
-    }
-  }
 `
 export const NavBarTrad = styled.div`
   display: flex;

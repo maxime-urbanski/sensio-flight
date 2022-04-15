@@ -3,4 +3,5 @@ export const theme = {
   secondary: '#066163',
   third: '#CDBE78',
   white: '#F2F2F2',
+  red: '#fff'
 }

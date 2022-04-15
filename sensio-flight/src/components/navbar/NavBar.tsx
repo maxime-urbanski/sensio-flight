@@ -1,5 +1,6 @@
 import i18n from '../../i18n'
 import {NavBarContainer, NavBarTrad} from '../../styles/Navbar'
+import { Link } from "../../styles/layout"
 
 const NavBar = (): JSX.Element => {
   const changeLanguage = (lng: string) => {
@@ -20,7 +21,7 @@ const NavBar = (): JSX.Element => {
   return (
     <>
       <NavBarContainer>
-        <a href="/">Sensio-flight</a>
+        <Link href="/" color="third" size={45}>Sensio-flight</Link>
         <NavBarTrad>
           {
             flags.map(({icon, langue}) => (

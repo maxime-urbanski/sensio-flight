@@ -9,8 +9,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <SearchFlight />
       <Container>
-        <SearchFlight />
+        ok
       </Container>
     </div>
   );
