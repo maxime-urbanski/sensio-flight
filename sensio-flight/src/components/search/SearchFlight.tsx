@@ -1,16 +1,34 @@
 import {useTranslation} from "react-i18next";
-import { HeroContainer, Container, Title, SearchContainer} from "../../styles/layout";
+import InputSearch from "./InputSearch";
+import SearchButton from "./SearchButton";
+import { HeroContainer, Container, Title, SearchContainer, GridContainer } from "../../styles/layout";
 
 const SearchFlight = (): JSX.Element => {
 
-  const {t, i18n } = useTranslation()
+  const {t} = useTranslation();
 
   return (
     <>
       <HeroContainer>
         <Container>
-          <Title color={"red"} position={"center"}>{t('find')}</Title>
-          <SearchContainer>Hello</SearchContainer>
+          <SearchContainer>
+            <Title
+              color={"third"}
+              position={"center"}>
+              {t('find')}
+            </Title>
+            <GridContainer>
+              <InputSearch
+                label={t('from')}
+                name={"departure"}
+              />
+              <InputSearch
+                label={t('to')}
+                name={"arrival"}
+              />
+            </GridContainer>
+              <SearchButton info={t('search')}/>
+            </SearchContainer>
         </Container>
       </HeroContainer>
     </>

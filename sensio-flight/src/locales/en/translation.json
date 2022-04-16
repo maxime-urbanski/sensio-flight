@@ -1,4 +1,8 @@
 {
   "welcome": "Welcome",
-  "find": "Search for the best flight with Sension-flight"
+  "find": "Search for the best flight with Sension-flight",
+  "from": "From",
+  "to": "To",
+  "search": "Find your flight",
+  "not_found": "No airport found"
 }
