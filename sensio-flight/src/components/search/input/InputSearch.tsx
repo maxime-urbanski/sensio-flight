@@ -1,10 +1,10 @@
 import React, {useContext, useState} from "react";
-import { InputContainer } from "../../styles/layout";
-import InputResult from "./input/InputResult";
-import {TripContext} from "../../context/TravelContext";
+import { InputContainer } from "../../../styles/layout";
+import InputResult from "./InputResult";
+import {TripContext} from "../../../context/TravelContext";
 
 interface InputSearchProps {
-  label?: string;
+  label: string;
   inputName: string;
 }
 

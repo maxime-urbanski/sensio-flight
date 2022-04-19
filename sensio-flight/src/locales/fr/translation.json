@@ -4,5 +4,6 @@
   "from": "Départ",
   "to": "Arriver",
   "search": "Trouve ton vol",
-  "not_found": "Pas d'aéroport trouvé"
+  "not_found": "Pas d'aéroport trouvé",
+  "depart": "Départ"
 }

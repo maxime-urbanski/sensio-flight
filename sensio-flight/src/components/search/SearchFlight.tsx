@@ -1,7 +1,8 @@
 import {useTranslation} from "react-i18next";
-import InputSearch from "./InputSearch";
+import InputSearch from "./input/InputSearch";
 import SearchButton from "./SearchButton";
 import { HeroContainer, Container, Title, SearchContainer, GridContainer } from "../../styles/layout";
+import DatePicker from "./input/DatePicker";
 
 const SearchFlight = (): JSX.Element => {
 
@@ -26,6 +27,7 @@ const SearchFlight = (): JSX.Element => {
                 label={t('to')}
                 inputName={"arrival"}
               />
+              <DatePicker />
             </GridContainer>
               <SearchButton info={t('search')}/>
             </SearchContainer>

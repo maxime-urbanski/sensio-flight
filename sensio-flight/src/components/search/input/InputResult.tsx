@@ -1,8 +1,7 @@
-import React, {SetStateAction, useContext, useState} from "react";
+import React, { useContext } from "react";
 import {useTranslation} from "react-i18next";
 import flightJSON from '../../../flights.json';
 import {ResultInputContainer} from "../../../styles/layout";
-import {TripState} from "../InputSearch";
 import { JSON } from "../../../interface/JsonData";
 import {TripContext} from '../../../context/TravelContext'
 

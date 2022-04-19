@@ -104,7 +104,7 @@ export const InputContainer = styled(FlexContainer)`
       padding: 3px;
     }
   }  
-  > input[type="search"] {
+  > input {
     height: 35px;
     width: 100%;
     border-radius: 4px;
@@ -126,7 +126,6 @@ export const Button = styled.button`
 export const ResultInputContainer = styled.div`
   margin-top: 18px;
   background-color: ${({theme}) => theme.white};
-  padding: 10px 5px;
   position: relative;
   color: ${({theme}) => theme.primary};
   z-index: 5;
@@ -147,7 +146,7 @@ export const ResultInputContainer = styled.div`
 
   > div {
     cursor: pointer;
-    
+    padding: 10px 5px;
     &:hover {
       background-color: ${({theme}) => theme.third};
     }
