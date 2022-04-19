@@ -1,4 +1,4 @@
-interface Flight {
+export interface Flight {
   id: string
   flightNumber: string
   takeoff: string
@@ -10,7 +10,7 @@ interface Flight {
   arrivalAirport: string
 }
 
-interface IncludedType {
+export interface IncludedType {
   [key: string]: {
     city?: string
     name: string

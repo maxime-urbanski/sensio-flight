@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import { InputContainer } from "../../../styles/layout";
 import InputResult from "./InputResult";
-import {TripContext} from "../../../context/TravelContext";
+import {Place, Trip, TripContext} from "../../../context/TravelContext";
 
 interface InputSearchProps {
   label: string;
@@ -11,7 +11,9 @@ interface InputSearchProps {
 export interface TripState {
   departure?: string;
   arrival?: string;
+  date?: string;
 }
+
 
 const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
 
@@ -22,10 +24,13 @@ const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setShowResult(true)
-    updateTrip({...trip, [name]: value})
+    updateTrip({...trip, [name]: {
+        city: value
+      }})
   }
 
-  const bluredInput = () => setShowResult(false);
+  // @ts-ignore
+  const {city} = trip[inputName as keyof Trip]
 
   return (
     <div style={{display: "flex", flexDirection:"column"}}>
@@ -33,14 +38,14 @@ const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
         <label htmlFor="">{label}</label>
         <input
           type="search"
-          value={trip[inputName as keyof TripState]}
+          value={city}
           onChange={handleChange}
           name={inputName}
         />
       </InputContainer>
       {showResult &&
         <InputResult
-          value={trip[inputName as keyof TripState]!}
+          value={city}
           showResult={showResult}
           setShowResult={setShowResult}
           inputName={inputName}

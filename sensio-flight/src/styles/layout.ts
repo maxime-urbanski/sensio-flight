@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 interface LinkProps {
   color?: 'primary' | 'secondary' | 'third' | 'white' | 'red'
@@ -96,7 +96,7 @@ export const InputContainer = styled(FlexContainer)`
       content: "";
       width: 100%;
       height: 9px;
-      background-color: rgba(56, 56, 56, 0.7);
+      background: rgba(56, 56, 56, 0.7);
       position: absolute;
       top: 9px;
       left: -2px;
@@ -151,5 +151,32 @@ export const ResultInputContainer = styled.div`
       background-color: ${({theme}) => theme.third};
     }
   }
+`
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Wait = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
+  > img {
+    width: 100px;
+    animation: ${rotate} 2s linear infinite;
+  }
 `

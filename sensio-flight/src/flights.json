@@ -10,7 +10,6 @@
       "price": 399.99,
       "currencyCode": "EUR",
       "departureAirport": "/airports/CDG",
-
       "arrivalAirport": "/airports/JFK"
     },
     {

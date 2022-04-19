@@ -1,22 +1,37 @@
-import React, {createContext} from "react";
+import {createContext} from "react";
 
-interface Trip {
-  departure: string;
-  arrival: string;
+export interface Place {
+  airport: string;
+  city: string;
+}
+
+export interface Trip {
+  departure: Place;
+  arrival: Place;
   date: string;
 }
 
 interface TripContext {
   trip: Trip;
   updateTrip: (trip: Trip) => void;
+  result: boolean;
+  showResult: (result: boolean) => void;
 }
 const defaultValue = {
   trip: {
-    departure: '',
-    arrival: '',
+    departure: {
+      airport: '',
+      city: '',
+    },
+    arrival: {
+      airport: '',
+      city: '',
+    },
     date: ''
   },
-  updateTrip: (_trip: Trip) => {}
+  updateTrip: (_trip: Trip) => {},
+  result: false,
+  showResult: (result: boolean) => {}
 }
 
 export const TripContext = createContext<TripContext>(defaultValue);
