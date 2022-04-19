@@ -4,29 +4,27 @@ import flightJSON from '../../../flights.json';
 import {ResultInputContainer} from "../../../styles/layout";
 import {TripState} from "../InputSearch";
 import { JSON } from "../../../interface/JsonData";
-
+import {TripContext} from '../../../context/TravelContext'
 
 interface InputResultProps {
   value: string;
-  setValue: React.Dispatch<SetStateAction<TripState>>;
   showResult: boolean;
   setShowResult:  React.Dispatch<boolean>;
-  name: string
+  inputName: string
 }
 
-
-const InputResult = ({value, setValue, setShowResult, showResult, name}: InputResultProps): JSX.Element => {
+const InputResult = ({value, setShowResult, showResult, inputName}: InputResultProps): JSX.Element => {
 
   const {t} = useTranslation()
+
+  const { trip, updateTrip} = useContext(TripContext)
 
   const { data, included }: JSON = flightJSON;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const { innerText } = event.currentTarget;
     setShowResult(!showResult);
-    // updateTrip((prevState): TripState => ({...prevState,
-    //   [name]: innerText
-    // }))
+    updateTrip({...trip, [inputName]: innerText})
   }
 
   /**

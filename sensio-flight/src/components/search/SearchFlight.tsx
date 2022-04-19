@@ -20,11 +20,11 @@ const SearchFlight = (): JSX.Element => {
             <GridContainer>
               <InputSearch
                 label={t('from')}
-                name={"departure"}
+                inputName={"departure"}
               />
               <InputSearch
                 label={t('to')}
-                name={"arrival"}
+                inputName={"arrival"}
               />
             </GridContainer>
               <SearchButton info={t('search')}/>
