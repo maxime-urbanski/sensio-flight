@@ -5,15 +5,13 @@ import { HeroContainer, Container, Title, SearchContainer, GridContainer } from 
 import DatePicker from "./input/DatePicker";
 import {useContext} from "react";
 import {TripContext} from "../../context/TravelContext";
+import Autocomplete from "./input/Autocomplete";
 
 const SearchFlight = (): JSX.Element => {
 
   const {t} = useTranslation();
 
   const { trip } = useContext(TripContext);
-  const {arrival, departure} = trip
-
-
   return (
     <>
       <HeroContainer>
@@ -25,13 +23,13 @@ const SearchFlight = (): JSX.Element => {
               {t('find')}
             </Title>
             <GridContainer>
-              <InputSearch
-                label={t('from')}
+              <Autocomplete
                 inputName={"departure"}
+                label={t('from')}
               />
-              <InputSearch
+              <Autocomplete
+                inputName={"arrival"}
                 label={t('to')}
-                inputName={"arrival" as keyof TripState}
               />
               <DatePicker />
             </GridContainer>

@@ -9,7 +9,6 @@ export const ResultContainer = styled.div`
   padding: 20px 10px;
   border:3px solid ${({theme}) => theme.secondary};
   border-radius: 8px;
-  height: 100px;
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(4,1fr);

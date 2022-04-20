@@ -50,6 +50,7 @@ export const Title = styled.h1.attrs(({ color, size, position, marginTop }: Titl
     font-size: ${({size}) => `${size}px`};
     text-align: ${({position}) => position};
     margin-top: ${({marginTop}) => `${marginTop}px`};
+    margin-bottom: 50px;
   `
 
 export const SearchContainer = styled.div`
@@ -75,6 +76,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+  position: relative;
 `
 
 export const InputContainer = styled(FlexContainer)`
