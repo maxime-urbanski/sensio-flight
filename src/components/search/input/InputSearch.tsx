@@ -18,6 +18,8 @@ export interface TripState {
 const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
 
   const { trip, updateTrip} = useContext(TripContext)
+  const [value, setValue] = useState('');
+
 
   const [showResult, setShowResult ] = useState<boolean>(false)
 
@@ -33,8 +35,9 @@ const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
   const {city} = trip[inputName as keyof Trip]
 
   return (
-    <div style={{display: "flex", flexDirection:"column"}}>
-      <InputContainer>
+    <div style={{position: "relative", zIndex:"1"}} >
+      <div style={{display: "flex", flexDirection:"column"}}>
+        <InputContainer>
         <label htmlFor="">{label}</label>
         <input
           type="search"
@@ -42,15 +45,17 @@ const InputSearch = ({label, inputName}: InputSearchProps): JSX.Element => {
           onChange={handleChange}
           name={inputName}
         />
+        {showResult &&
+          <InputResult
+            value={city}
+            setValue={setValue}
+            showResult={showResult}
+            setShowResult={setShowResult}
+            inputName={inputName}
+          />
+        }
       </InputContainer>
-      {showResult &&
-        <InputResult
-          value={city}
-          showResult={showResult}
-          setShowResult={setShowResult}
-          inputName={inputName}
-        />
-      }
+      </div>
     </div>
   )
 }
