@@ -9,7 +9,7 @@ interface SearchButtonProps {
 
 const SearchButton = ({ info }: SearchButtonProps): JSX.Element => {
   const [wait, setWait] = useState<boolean>(false)
-  const {result, showResult} = useContext(TripContext)
+  const {showResult} = useContext(TripContext)
 
   const handleClick = () => {
     setWait(!wait)

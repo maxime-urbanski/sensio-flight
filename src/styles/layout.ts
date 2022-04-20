@@ -19,6 +19,7 @@ export const Container = styled.div<{ fluid?: boolean }>`
   width: ${({ fluid }) => (fluid ? '100%' : '1100px')};
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;
 `
 export const HeroContainer = styled.div`
   background-image: url("/img/search_bg.jpg");
@@ -122,6 +123,7 @@ export const Button = styled.button`
   color: ${({theme}) => theme.third};
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 `
 export const ResultInputContainer = styled.div`
   margin-top: 18px;
@@ -173,10 +175,19 @@ export const Wait = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   
   > img {
     width: 100px;
     animation: ${rotate} 2s linear infinite;
+  }
+  
+  > h2 {
+    color: ${({theme}) => theme.secondary};
+    font-size: 28px;
+    
+    > span {
+      color: ${({theme}) => theme.primary};
+    }
   }
 `

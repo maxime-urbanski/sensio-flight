@@ -1,0 +1,13 @@
+{
+  "welcome": "Welcome",
+  "find": "Search for the best flight with Sension-flight",
+  "from": "From",
+  "to": "To",
+  "search": "Find your flight",
+  "not_found": "No airport found",
+  "travel_research_departure": "We are looking for your trip from",
+  "travel_research_arrival": "and to",
+  "result_count": "We found {{ count }} flights for your search",
+  "duration": "Flight duration",
+  "flight_number": "Flight number"
+}

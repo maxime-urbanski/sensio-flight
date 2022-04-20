@@ -1,5 +1,6 @@
 export interface Flight {
   id: string
+  airline: string
   flightNumber: string
   takeoff: string
   landing: string

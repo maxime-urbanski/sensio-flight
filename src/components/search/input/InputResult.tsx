@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import {useTranslation} from "react-i18next";
 import flightJSON from '../../../flights.json';
 import {ResultInputContainer} from "../../../styles/layout";
-import {IncludedType, JSON} from "../../../interface/JsonData";
+import { JSON} from "../../../interface/JsonData";
 import {TripContext} from '../../../context/TravelContext'
 
 interface InputResultProps {
@@ -43,7 +43,7 @@ const InputResult = ({value, setShowResult, showResult, inputName}: InputResultP
   /**
    * transform object included in array
    */
-  
+
   for (const [key, value] of Object.entries(included)) {
     arr.push({
       index: key,
@@ -60,7 +60,7 @@ const InputResult = ({value, setShowResult, showResult, inputName}: InputResultP
   const autocompleteResult = (): JSX.Element | JSX.Element[] => {
     const filteredAnswer = arr
       .filter(
-        ({index, content}) => content.city?.includes(value) || content.name?.includes(value)
+        ({index, content}) => content.city?.toUpperCase().includes(value.toUpperCase()) || content.name?.toUpperCase().includes(value.toUpperCase())
       );
     if (filteredAnswer.length === 0 ) {
       return <p><em>{t('not_found')}</em></p>

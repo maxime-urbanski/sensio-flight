@@ -17,7 +17,6 @@ const NavBar = (): JSX.Element => {
     }
   ]
 
-
   return (
     <>
       <NavBarContainer>

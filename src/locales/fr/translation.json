@@ -1,0 +1,13 @@
+{
+  "welcome": "Bienvenue",
+  "find": "Trouver le meilleur vol avec Sensio-flight",
+  "from": "Départ",
+  "to": "Arriver",
+  "search": "Trouve ton vol",
+  "not_found": "Pas d'aéroport trouvé",
+  "travel_research_departure": "Nous recherchons votre voyage au départ de ",
+  "travel_research_arrival": "et à destination de ",
+  "result_count": "Nous avons trouvé {{ count }} vols pour votre recherche",
+  "duration": "Durée du vol",
+  "flight_number": "Numéro du vol"
+}

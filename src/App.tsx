@@ -27,7 +27,6 @@ function App() {
     result,
     showResult
   }
-
   return (
     <TripContext.Provider value={defaultValue}>
       <div className="App">
